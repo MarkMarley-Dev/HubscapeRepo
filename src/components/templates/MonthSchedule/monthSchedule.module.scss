@@ -21,8 +21,11 @@
     padding: 40px;
   }
 
+  @include desktop {
+    max-width: 1400px;
+  }
   .toggleContainer {
     margin-bottom: 20px;
-    align-self: flex-start; // Aligns the toggle to the start of the flex container
+    align-self: flex-start;
   }
 }

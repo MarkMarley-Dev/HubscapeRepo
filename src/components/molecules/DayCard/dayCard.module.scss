@@ -3,11 +3,13 @@
 .dayCard {
   background-color: $color-primary-dark-blue;
   color: $color-text-light;
-  padding: $padding-base;
+  padding: $padding-medium;
   cursor: pointer;
   border-radius: 8px;
   text-align: center;
   transition: background-color 0.3s ease;
+  max-width: 140px;
+  height: 200px;
 
   &:hover {
     background-color: darken($color-primary-dark-blue, 10%);

@@ -1,14 +1,19 @@
 @import '../../../styles/variables';
 
 .monthSchedule {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); 
-  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $padding-base;
   padding: 20px;
   background-color: $color-background-dark;
   color: $color-text-light;
   width: 100%;
   box-sizing: border-box; 
+  justify-content: space-evenly;
+  justify-items: center;
+  align-content: space-evenly;
+  align-items: center;
+  place-self: center;
 }
 
 .dayCard {
