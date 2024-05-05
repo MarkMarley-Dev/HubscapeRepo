@@ -1,0 +1,14 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.visitCard {
+  background-color: darken($color-primary-dark-blue, 5%);
+  color: lighten($color-text-light, 10%);
+  padding: 10px;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

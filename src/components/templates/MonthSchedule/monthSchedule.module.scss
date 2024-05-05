@@ -1,0 +1,27 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.dayList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $color-background-dark;
+  color: $color-text-light;
+  padding: $padding-base;
+  gap: 10px;
+  overflow-y: auto;
+  max-height: 100vh;  
+
+  @include tablet {
+    padding: $padding-medium;
+  }
+
+  @include laptop {
+    padding: $padding-large;
+  }
+
+  @include desktop {
+    max-width: 1200px;
+    margin: 0 auto;  
+  }
+}

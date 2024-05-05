@@ -1,0 +1,17 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.day {
+  background-color: $color-primary-dark-blue;
+  color: $color-text-light;
+  padding: $padding-base;
+  margin-bottom: 10px; 
+  border-radius: 8px;
+  width: 100%; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+  &.current {
+    background-color: $color-highlight-green;
+    border: 2px solid darken($color-highlight-green, 20%);
+  }
+}
