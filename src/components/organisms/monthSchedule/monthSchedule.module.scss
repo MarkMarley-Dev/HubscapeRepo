@@ -1,0 +1,29 @@
+@import '../../../styles/variables';
+
+.monthSchedule {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); 
+  gap: 10px;
+  padding: 20px;
+  background-color: $color-background-dark;
+  color: $color-text-light;
+  width: 100%;
+  box-sizing: border-box; 
+}
+
+.dayCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  background-color: darken($color-primary-dark-blue, 5%);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px $modal-shadow-color;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: lighten($color-primary-dark-blue, 5%);
+  }
+}
+

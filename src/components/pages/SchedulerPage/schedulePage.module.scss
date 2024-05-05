@@ -1,0 +1,21 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.schedulePage {
+  padding: 20px;
+  background-color: $color-background-dark;
+  color: $color-text-light;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  @include tablet {
+    padding: 30px;
+  }
+
+  @include laptop {
+    padding: 40px;
+  }
+}

@@ -1,0 +1,20 @@
+@import '../../../styles/variables';
+
+.dayCard {
+  background-color: $color-primary-dark-blue;
+  color: $color-text-light;
+  padding: $padding-base;
+  cursor: pointer;
+  border-radius: 8px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($color-primary-dark-blue, 10%);
+  }
+
+     &.current {
+    background-color: $color-highlight-green;
+    border: 2px solid darken($color-highlight-green, 10%);
+  }
+}

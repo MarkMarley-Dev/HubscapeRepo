@@ -1,11 +1,5 @@
-import { Visit } from "../../../data/MockData";
+import { DayType } from "../../molecules/DayCard/types";
 
-export type DayProps = {
-  day: {
-    date: string;
-    operatives: number;
-    startTime: string;
-    visits: Visit[];
-  };
-  isCurrent?: boolean;
-};
+export interface DayScheduleProps {
+  day: DayType;
+}

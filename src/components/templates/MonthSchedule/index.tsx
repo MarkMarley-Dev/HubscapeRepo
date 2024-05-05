@@ -1,19 +1,32 @@
-import React from 'react';
-import styles from './monthSchedule.module.scss';
-import Day from '../../organisms/DaySchedule';
-import { DayType } from '../../../data/MockData';
+import React, { useState } from 'react';
 
-type MonthScheduleProps = {
+
+import styles from './monthSchedule.module.scss';
+import { DayType } from '../../molecules/DayCard/types';
+import ToggleSwitch from '../../atoms/ToggleSwitch';
+import DaySchedule from '../../organisms/DaySchedule';
+import MonthSchedule from '../../organisms/monthSchedule';
+
+interface ScheduleTemplateProps {
   schedule: DayType[];
-  currentDate: string; 
+  onDayClick: (day: DayType) => void;
+}
+
+const ScheduleTemplate: React.FC<ScheduleTemplateProps> = ({ schedule, onDayClick }) => {
+  const [viewMode, setViewMode] = useState('day'); // 'day' or 'month'
+
+  const toggleViewMode = () => {
+    setViewMode(prevMode => (prevMode === 'day' ? 'month' : 'day'));
+  };
+
+  return (
+    <div className={styles.scheduleTemplate}>
+      <ToggleSwitch isOn={viewMode === 'month'} handleToggle={toggleViewMode} />
+      {viewMode === 'day' ? 
+        <DaySchedule day={schedule.find(day => day.date === new Date().toISOString().slice(0, 10))!} /> : 
+        <MonthSchedule schedule={schedule} onDayClick={onDayClick} />}
+    </div>
+  );
 };
 
-export const MonthSchedule: React.FC<MonthScheduleProps> = ({ schedule, currentDate }) => (
-  <div className={styles.monthSchedule}>
-    {schedule.map(day => (
-      <Day key={day.date} day={day} isCurrent={day.date === currentDate} />
-    ))}
-  </div>
-);
-
-export default MonthSchedule;
+export default ScheduleTemplate;

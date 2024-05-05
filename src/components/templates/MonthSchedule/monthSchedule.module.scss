@@ -1,27 +1,27 @@
 @import '../../../styles/variables';
 @import '../../../styles/mixins';
 
-.dayList {
+.scheduleTemplate {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: min-content;
+  padding: 20px;
   background-color: $color-background-dark;
   color: $color-text-light;
-  padding: $padding-base;
-  gap: 10px;
-  overflow-y: auto;
-  max-height: 100vh;  
+  width: 100%;
+
 
   @include tablet {
-    padding: $padding-medium;
+    padding: 30px;
   }
 
   @include laptop {
-    padding: $padding-large;
+    padding: 40px;
   }
 
-  @include desktop {
-    max-width: 1200px;
-    margin: 0 auto;  
+  .toggleContainer {
+    margin-bottom: 20px;
+    align-self: flex-start; // Aligns the toggle to the start of the flex container
   }
 }

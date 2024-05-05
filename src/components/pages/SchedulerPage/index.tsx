@@ -1,16 +1,34 @@
-// components/SchedulePage/SchedulePage.tsx
-import MonthSchedule from '../../templates/MonthSchedule';
+import { useState } from 'react';
+import styles from './schedulePage.module.scss';
+import { DayType } from '../../molecules/DayCard/types';
+import ScheduleTemplate from '../../templates/MonthSchedule';
 import { mockSchedule } from '../../../data/MockData';
-
+import ScheduleModal from '../../organisms/Modals/ScheduleModal';
 
 const SchedulePage = () => {
-  const today = new Date().toISOString().slice(0, 10); // Get current date in YYYY-MM-DD format
+  const [viewDay, setViewDay] = useState<DayType | null>(null);
+  const [modalOpen, setModalOpen] = useState(false);
+
+
+  const handleDayClick = (day: DayType) => {
+    setViewDay(day);
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+    setViewDay(null); 
+  };
 
   return (
-    <div>
-        <MonthSchedule schedule={mockSchedule} currentDate={today} />
+    <div className={styles.schedulePage}>
+      <ScheduleTemplate schedule={mockSchedule} onDayClick={handleDayClick} />
+      {viewDay && modalOpen && (
+        <ScheduleModal day={viewDay} isOpen={modalOpen} onClose={handleCloseModal} />
+      )}
     </div>
   );
 };
 
 export default SchedulePage;
+

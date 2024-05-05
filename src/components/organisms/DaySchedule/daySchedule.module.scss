@@ -1,0 +1,19 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.daySchedule {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: $color-primary-dark-blue;
+  color: $color-text-light;
+  border-radius: 8px;
+
+  &.current {
+    background-color: $color-highlight-green; 
+    border: 2px solid darken($color-highlight-green, 10%);
+  }
+}
