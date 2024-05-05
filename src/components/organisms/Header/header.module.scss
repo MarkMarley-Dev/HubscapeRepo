@@ -1,0 +1,30 @@
+@import '../../../styles/variables';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: $color-primary-dark-blue;
+  color: $color-text-light;
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+
+.title {
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+.toggleContainer {
+  display: flex;
+  align-items: center;
+}
+
+.toggleLabel {
+  margin-right: 10px;
+  font-size: 1rem;
+}
