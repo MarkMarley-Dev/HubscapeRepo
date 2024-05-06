@@ -7,4 +7,6 @@ export type VisitProps = {
     startTime: string;
     notes?: string;
   };
+  moveVisit: (dayIndex: number, fromIndex: number, toIndex: number) => void;
+  index: number;
 };

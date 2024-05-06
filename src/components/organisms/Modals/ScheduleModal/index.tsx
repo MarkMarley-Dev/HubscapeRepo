@@ -8,7 +8,7 @@ const ScheduleModal: React.FC<ScheduleModalProps> = ({ day, isOpen, onClose }) =
   if (!isOpen) return null;
 
   const handleOverlayClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    if (event.target === event.currentTarget) {  // Checks if the click is on the overlay, not the child elements
+    if (event.target === event.currentTarget) { 
       onClose();
     }
   };
