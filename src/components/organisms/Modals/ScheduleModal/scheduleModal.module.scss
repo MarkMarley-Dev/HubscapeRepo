@@ -15,9 +15,10 @@
 
 .modalContent {
   position: relative;
-  padding: $padding-large;
+  padding: $padding-medium;
   background-color: $color-background-dark;
   color: $color-text-light;
+  border: 2px solid $color-text-light;
   border-radius: 8px;
   max-width: 600px;
   width: 90%;
@@ -26,11 +27,11 @@
 
 .closeButton {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 20px;
+  right: 20px;
   border: none;
   background: none;
   color: $color-text-light;
-  font-size: 1.5rem;
+  font-size: 2rem;
   cursor: pointer;
 }
