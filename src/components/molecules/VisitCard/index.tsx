@@ -21,7 +21,7 @@ export const VisitCard: React.FC<VisitProps> = ({ visit, index, moveVisit }) => 
         return;
       }
       if (item.index !== index) {
-        moveVisit(visit.id, item.index, index);
+        moveVisit(visit.id - 1, item.index, index);
         item.index = index; 
       }
     }

@@ -1,18 +1,23 @@
 import {create} from 'zustand';
-import { DayType, mockSchedule } from '../data/MockData';
+import { mockSchedule } from '../data/MockData';
+import { StoreState } from './types';
 
-type StoreState = {
-    schedule: DayType[];
-    moveVisit: (dayIndex: number, fromIndex: number, toIndex: number) => void;
-};
 
 export const useStore = create<StoreState>((set) => ({
-    schedule: mockSchedule, 
-    moveVisit: (dayIndex, fromIndex, toIndex) => set((state) => {
-        const newSchedule = [...state.schedule];
-        const movedVisit = newSchedule[dayIndex].visits.splice(fromIndex, 1)[0];
-        newSchedule[dayIndex].visits.splice(toIndex, 0, movedVisit);
-
-        return { schedule: newSchedule };
-    }),
+  schedule: mockSchedule,
+  moveVisit: (dayIndex, fromIndex, toIndex) => set((state) => {
+    const updatedSchedule = [...state.schedule];
+    const day = updatedSchedule[dayIndex];
+    let fromStartTime;
+    let toStartTime;
+    
+     fromStartTime = day.visits[fromIndex].startTime;
+     toStartTime = day.visits[toIndex].startTime;
+    
+    [day.visits[fromIndex], day.visits[toIndex]] = [day.visits[toIndex], day.visits[fromIndex]];
+    
+[day.visits[fromIndex].startTime, day.visits[toIndex].startTime] = [fromStartTime, toStartTime];
+    console.log(fromStartTime, toStartTime)
+     return { schedule: updatedSchedule };
+  }),
 }));

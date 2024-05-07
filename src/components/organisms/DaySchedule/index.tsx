@@ -6,7 +6,7 @@ import { useStore } from '../../../store/store';
 
 const DaySchedule: React.FC<DayScheduleProps> = ({ day }) => {
   const {schedule, moveVisit } = useStore(); 
-  console.log(schedule[5].visits)
+
   return (
     <div className={styles.daySchedule}>
       <h2>Current day schedule for {day.date}</h2>
